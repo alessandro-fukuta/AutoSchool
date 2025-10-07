@@ -1,0 +1,67 @@
+@page "/empresa/list"
+@using AutoSchool.Repositories
+@using AutoSchool.Models
+@using System.Threading.Tasks
+@rendermode InteractiveServer
+@inject IEmpresaRepositories EmpresaRepository
+
+@* Aqui é comentário  *@
+
+<div class="row">
+    <div class="col-md-10">
+        <h2>Empresas</h2>
+    </div>
+    <div class="col-md-2">
+        <a class="btn btn-primary" href="/empresa/add">Nova Empresa</a>
+    </div>
+
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>CNPJ</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var empresa in Empresas)
+        {
+            <tr>
+                <td>@empresa.Id</td>
+                <td>@empresa.Nome</td>
+                <td>@empresa.Cnpj</td>
+                <td>@empresa.Endereco</td>
+                <td>@empresa.Telefone</td>
+                <td><button class="btn btn-warning" @onclick="@(() => CallEdit(empresa.Id))">Editar</button></td>
+                <td><button class="btn btn-danger" @onclick="@(() => CallDelete(empresa.Id))">Excluir</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+
+    public List<Empresa> Empresas { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Empresas = await EmpresaRepository.GetAllEmpresasAsync();
+    }
+
+    private async Task CallEdit(int id)
+    {
+        // construir e depois aqui chamar a pagina Edit
+    }
+    private async Task CallDelete(int id)
+    {
+        await EmpresaRepository.DeleteEmpresaAsync(id);
+        Empresas = await EmpresaRepository.GetAllEmpresasAsync();
+    }
+
+
+}
