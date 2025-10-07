@@ -175,3 +175,4 @@ C:\blazor\AutoSchool\obj\Debug\net9.0\refint\AutoSchool.dll
 C:\blazor\AutoSchool\obj\Debug\net9.0\AutoSchool.pdb
 C:\blazor\AutoSchool\obj\Debug\net9.0\AutoSchool.genruntimeconfig.cache
 C:\blazor\AutoSchool\obj\Debug\net9.0\ref\AutoSchool.dll
+C:\blazor\AutoSchool\obj\Debug\net9.0\AutoSchool.sourcelink.json

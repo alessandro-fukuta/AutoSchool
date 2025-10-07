@@ -1,6 +1,7 @@
 @page "/empresa/list"
 @using AutoSchool.Repositories
 @using AutoSchool.Models
+@inject NavigationManager NavigationManager
 @using System.Threading.Tasks
 @rendermode InteractiveServer
 @inject IEmpresaRepositories EmpresaRepository
@@ -56,6 +57,7 @@
     private async Task CallEdit(int id)
     {
         // construir e depois aqui chamar a pagina Edit
+        NavigationManager.NavigateTo($"/empresa/edit/{id}");
     }
     private async Task CallDelete(int id)
     {

@@ -1,7 +1,37 @@
-﻿@page "/"
+﻿@using AutoSchool.Components.Shared
+@page "/"
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="mt-3 mb-3">
+    <div class="jumbotron bg-primary text-white text-center">
+        <h1 class="display-4">Bem-vindo ao AutoSchool #1</h1>
+        <p class="lead">
+            Sua plataforma completa de Gestão de AutoEscolas.
+        </p>
+        <hr class="my-4">
+        <p>Explore nossos cursos, recursos e ferramentas para aprimorar suas habilidades.</p>
+        <a class="btn btn-light btn-sm mb-3" href="/empresa/list" role="button">Começar Agora</a>
+    </div>
+</div>
 
-Welcome to your new app.
+
+<div class="row">
+    <div class="col-md-3">
+        <Cartao Titulo="Bem-vindo ao AutoSchool" SubTitulo="Projeto .Net"
+            Texto="Explore nossos recursos e comece sua jornada de aprendizado hoje mesmo!" />
+    </div>
+    <div class="col-md-3">
+        <Cartao Titulo="Projeto Blazor Server" SubTitulo="C# com .Net"
+            Texto="O Potêncial de uma linguagem robusta com um projeto moderno e completo." Cor="warning" />
+    </div>
+    <div class="col-md-3">
+        <Cartao Titulo="Bootstrap 5" SubTitulo="Design Responsivo"
+            Texto="Aproveite o poder do Bootstrap 5 para criar interfaces modernas e responsivas." Cor="success" />
+    </div>
+    <div class="col-md-3">
+        <Cartao Titulo="Navegação Simples" SubTitulo="Fácil de Usar" Texto="Navegue facilmente entre as páginas "
+            Cor="danger" Link="/empresa/list" />
+    </div>
+
+</div>

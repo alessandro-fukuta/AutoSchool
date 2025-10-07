@@ -1,0 +1,31 @@
+<div class="card text-white bg-@Cor mb-3" style="max-width: 18rem;">
+    <div class="card-header">@Titulo</div>
+    <div class="card-body">
+        <h5 class="card-title">@SubTitulo</h5>
+        <p class="card-text">@Texto</p>
+    </div>
+    @if (Link != "#")
+    {
+        <div class="card-footer">
+            <a href="@Link" class="btn btn-light">Saiba Mais</a>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string Titulo { get; set; } = "Cartão de Visita";
+    
+    [Parameter]
+    public string SubTitulo { get; set; } = "Subtítulo do Cartão";
+    
+    [Parameter]
+    public string Texto { get; set; } = "Este é um exemplo de cartão de visita em Blazor.";
+    
+    [Parameter]
+    public string Cor { get; set; } = "primary";
+
+    [Parameter]
+    public string Link { get; set; } = "#";
+
+}
